@@ -1,0 +1,2 @@
+-- Phase 1: intentionally no SQL statements.
+-- Future local-only seed content must contain no real personal data.

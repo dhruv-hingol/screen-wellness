@@ -1,0 +1,27 @@
+{
+  "name": "@screenwise/shared",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsc -p tsconfig.json --watch --preserveWatchOutput",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@screenwise/typescript-config": "workspace:*",
+    "@screenwise/eslint-config": "workspace:*",
+    "eslint": "^9.38.0",
+    "typescript": "~5.9.3"
+  }
+}

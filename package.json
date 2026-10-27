@@ -1,0 +1,33 @@
+{
+  "name": "screenwise-wellness",
+  "private": true,
+  "packageManager": "pnpm@10.18.3",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "db:seed-assessments": "node --env-file-if-exists=apps/api/.env scripts/seed-assessments.mjs",
+    "db:seed-activities": "node --env-file-if-exists=apps/api/.env scripts/seed-activities.mjs",
+    "db:check-analytics": "node --env-file-if-exists=apps/api/.env scripts/check-analytics-schema.mjs",
+    "db:check-content": "node --env-file-if-exists=apps/api/.env scripts/check-content-schema.mjs",
+    "db:seed-library": "node --env-file-if-exists=apps/api/.env scripts/seed-library.mjs",
+    "verify:phase5-live": "node --env-file-if-exists=apps/api/.env scripts/verify-phase5-live.mjs",
+    "dev": "turbo run dev",
+    "dev:web": "turbo run dev --filter=@screenwise/web --filter=@screenwise/shared",
+    "dev:api": "turbo run dev --filter=@screenwise/api --filter=@screenwise/shared",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:e2e": "playwright test",
+    "test": "pnpm --filter @screenwise/shared build && pnpm --filter @screenwise/api build && node --test tests/*.test.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.10",
+    "@playwright/test": "^1.56.0",
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.8",
+    "typescript": "~5.9.3"
+  }
+}
