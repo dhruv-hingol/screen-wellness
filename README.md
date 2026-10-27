@@ -1,5 +1,10 @@
 <!-- Phase 3 extension: see docs/assessment-scoring.md and development-progress.md for verified status. -->
 
+# Start both server with
+
+pnpm.cmd dev
+localhost:5173
+
 # ScreenWise Wellness
 
 Digital wellness for students and working professionals, built as a pnpm/Turborepo monorepo with separate React/Vite and Express applications.
